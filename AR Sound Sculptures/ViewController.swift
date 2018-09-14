@@ -13,6 +13,11 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    var audioSource: SCNAudioSource!
+    let maxSpawnCount = 1
+    var currSpawnCount = 0
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +26,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         
         // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
+        sceneView.showsStatistics = false
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        sceneView.scene = SCNScene()
         
-        // Set the scene to the view
-        sceneView.scene = scene
+        // Set the lighting for the scene
+        let environment = UIImage(named: "env.jpg")
+        sceneView.scene.lightingEnvironment.contents = environment
+        
+        // Add tapGestureRecognizer to the view controller
+        addTapGestureToSceneView()
+        
+        // Instantiate the audio source
+        setUpAudio(fileName: "sickomode.mp3")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,9 +48,42 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
+        configuration.isLightEstimationEnabled = true
+        
+        // Tell ARKit to look for horizontal planes
+        configuration.planeDetection = .horizontal
 
-        // Run the view's session
+        // Run the view's session!
         sceneView.session.run(configuration)
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+        
+        // Add the head sculpture at the start of the app for debugging
+        /*
+        let scene = SCNScene(named: "goldHead_TS.scn")
+        let headNode: SCNNode! = scene?.rootNode.childNode(withName: "head", recursively: true)
+        playAudioFromNode(node: headNode)
+    
+        headNode.position = SCNVector3(0, 0, -3)
+        headNode.scale = SCNVector3(0.3, 0.3, 0.3)
+        sceneView.scene.rootNode.addChildNode(headNode)
+         */
+        
+    }
+    
+    func nodeFromBundle(withName name: String) -> SCNNode? {
+        
+        guard let url = Bundle.main.url(forResource: name, withExtension: "obj") else {
+            fatalError("Failed to find model file.")
+        }
+        
+        let asset = MDLAsset(url:url)
+        guard let object = asset.object(at: 0) as? MDLMesh else {
+            fatalError("Failed to get mesh from asset.")
+        }
+        
+        print(object)
+        
+        return nil
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -51,17 +97,144 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
+    
+    // MARK: - Plane Detection
+    
+     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+         // 1. Unwrap anchor as an ARPlaneAnchor
+         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+        
+         // 2. Create the SCNPlane
+         let width = CGFloat(planeAnchor.extent.x)
+         let height = CGFloat(planeAnchor.extent.z)
+         let plane = SCNPlane(width: width, height: height)
+        
+         // 3. Set plane materials
+         plane.materials.first?.diffuse.contents = UIColor.blue
+        
+         // 4. Create a node with the plane geometry
+         let planeNode = SCNNode(geometry: plane)
+        
+         let x = CGFloat(planeAnchor.center.x)
+         let y = CGFloat(planeAnchor.center.y)
+         let z = CGFloat(planeAnchor.center.z)
+         planeNode.position = SCNVector3(x, y, z)
+         planeNode.eulerAngles.x = -Float.pi/2
+        
+        node.addChildNode(planeNode)
+        
+     }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        // 1. Extract previous ARPlaneAnchor, SCNNode, and SCNplane
+        guard let planeAnchor = anchor as? ARPlaneAnchor,
+            let planeNode = node.childNodes.first,
+            let plane = planeNode.geometry as? SCNPlane
+            else { return }
+        
+        // 2. Update plane's width and height
+        let width = CGFloat(planeAnchor.extent.x)
+        let height = CGFloat(planeAnchor.extent.z)
+        plane.width = width
+        plane.height = height
+        
+        // 3. Update planeNode's position
+        let x = CGFloat(planeAnchor.center.x)
+        let y = CGFloat(planeAnchor.center.y)
+        let z = CGFloat(planeAnchor.center.z)
+        planeNode.position = SCNVector3(x, y, z)
+        
+    }
+    
+    // MARK: - Touch Gestures
+    
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        // guard let sceneView = sender.view as? ARSCNView else { return }
+        let tapLocation = sender.location(in: sceneView)
+        
+//        addSculptureToSceneView(tapLocation: tapLocation)
+        
+        /*
+        let hitTestResult = sceneView.hitTest(tapLocation, options: [SCNHitTestOption.categoryBitMask : HitTestType.sculpture.rawValue] )
+        if !hitTestResult.isEmpty {
+            
+            /*
+            if var lucas = hitTestResult.first!.node.parentWithName("lucas") {
+                (lucas as! ColladaNode).activate()
+            } else {
+                // Add Lucas to the plane. Lucas only be added on a plane
+                addLucasToSceneView(tapLocation: tapLocation)
+            }
+            */
+            
+            if (currSpawnCount < maxSpawnCount) {
+                // addSculptureToSceneView(tapLocation: tapLocation)
+                currSpawnCount += 1
+            }
+            
+        }
+        */
+    }
+    
+    // Spawn the model where the tap occured on the horizontal plane
+//    func addSculptureToSceneView(tapLocation: CGPoint) {
+//        let hitTestResults = sceneView.hitTest(tapLocation, types: .existingPlaneUsingExtent)
+//
+//        // Get the x, y, and z from the tap location of the existing plane
+//        guard let hitTestResult = hitTestResults.first else { return }
+//
+//        let translation = hitTestResult.worldTransform.columns.3
+//        let x = translation.x
+//        let y = translation.y
+//        let z = translation.z
+//
+//        // TODO: - Turn spawnModel into a general function
+////        let sculptureNode = ColladaNode(named: "astroworld.dae")
+//
+//        let sculpture: SCNNode = sceneView.scene.rootNode.childNode(withName: "head", recursively: true)!
+//
+//        let material = SCNMaterial()
+//        material.lightingModel = SCNMaterial.LightingModel.physicallyBased
+//        material.fresnelExponent = 15
+//        material.diffuse.contents = UIImage(named: "albedo.png")
+//        material.roughness.contents = UIImage(named: "roughness.png")
+//        material.metalness.contents = UIImage(named: "metalness.png")
+//        material.normal.contents = UIImage(named: "normal.png")
+//        material.shininess = 1000
+//        sculpture.geometry?.firstMaterial = material
+//
+//
+////        sculptureNode.scale = SCNVector3(0.1, 0.1, 0.1)
+////        sculptureNode.position = SCNVector3(x, y, z)
+//
+//        // Add audio player to object node
+////        playAudioFromNode(node: sculptureNode)
+//
+////        sceneView.scene.rootNode.addChildNode(sculptureNode)
+//    }
+    
+    func addTapGestureToSceneView() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
+        self.sceneView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    // MARK: - Playing Audio
+    
+    func setUpAudio(fileName: String) {
+        audioSource = SCNAudioSource(fileNamed: fileName)
+        audioSource.loops = true
+        audioSource.load()
+    }
+    
+    func playAudioFromNode(node: SCNNode) {
+        node.addAudioPlayer(SCNAudioPlayer(source: audioSource))
+        
+        let play = SCNAction.playAudio(audioSource, waitForCompletion: false)
+        node.runAction(play)
+    }
+    
 
     // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
@@ -75,6 +248,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
+        
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        guard let estimate = self.sceneView.session.currentFrame?.lightEstimate else {
+            return
+        }
+        
+        // print("light estimate: %f", estimate.ambientIntensity)
+        
+        // Change intensity property of lights to respond to real world environment
+        let intensity = estimate.ambientIntensity / 100.0
+        sceneView.scene.lightingEnvironment.intensity = intensity
         
     }
 }

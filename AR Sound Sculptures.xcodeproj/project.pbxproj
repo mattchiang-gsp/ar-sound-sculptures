@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D243AE93214B3FCE00658605 /* goldHead_TS.scn in Resources */ = {isa = PBXBuildFile; fileRef = D243AE92214B3BA500658605 /* goldHead_TS.scn */; };
 		D2836EA4214AD2A700281B77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2836EA3214AD2A700281B77 /* AppDelegate.swift */; };
 		D2836EA6214AD2A700281B77 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D2836EA5214AD2A700281B77 /* art.scnassets */; };
 		D2836EA8214AD2A700281B77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2836EA7214AD2A700281B77 /* ViewController.swift */; };
 		D2836EAB214AD2A700281B77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2836EA9214AD2A700281B77 /* Main.storyboard */; };
 		D2836EAD214AD2A900281B77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2836EAC214AD2A900281B77 /* Assets.xcassets */; };
 		D2836EB0214AD2A900281B77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2836EAE214AD2A900281B77 /* LaunchScreen.storyboard */; };
+		D2836EBA214AD4C100281B77 /* sickomode.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D2836EB9214AD4C100281B77 /* sickomode.mp3 */; };
+		D2836EBD214AD6C500281B77 /* SCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2836EBC214AD6C500281B77 /* SCNNode.swift */; };
+		D2836EBF214AD71000281B77 /* ColladaNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2836EBE214AD71000281B77 /* ColladaNode.swift */; };
+		D2836ED1214B087800281B77 /* env.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2836ECC214B087800281B77 /* env.jpg */; };
+		D2836ED2214B087800281B77 /* roughness.png in Resources */ = {isa = PBXBuildFile; fileRef = D2836ECD214B087800281B77 /* roughness.png */; };
+		D2836ED3214B087800281B77 /* albedo.png in Resources */ = {isa = PBXBuildFile; fileRef = D2836ECE214B087800281B77 /* albedo.png */; };
+		D2836ED4214B087800281B77 /* metal.png in Resources */ = {isa = PBXBuildFile; fileRef = D2836ECF214B087800281B77 /* metal.png */; };
+		D2836ED5214B087800281B77 /* normal.png in Resources */ = {isa = PBXBuildFile; fileRef = D2836ED0214B087800281B77 /* normal.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D243AE92214B3BA500658605 /* goldHead_TS.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = goldHead_TS.scn; path = Resources/models/goldHead_TS.scn; sourceTree = SOURCE_ROOT; };
 		D2836EA0214AD2A700281B77 /* AR Sound Sculptures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR Sound Sculptures.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2836EA3214AD2A700281B77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2836EA5214AD2A700281B77 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -24,6 +34,14 @@
 		D2836EAC214AD2A900281B77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2836EAF214AD2A900281B77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2836EB1214AD2A900281B77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2836EB9214AD4C100281B77 /* sickomode.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sickomode.mp3; path = Resources/sickomode.mp3; sourceTree = SOURCE_ROOT; };
+		D2836EBC214AD6C500281B77 /* SCNNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNNode.swift; sourceTree = "<group>"; };
+		D2836EBE214AD71000281B77 /* ColladaNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColladaNode.swift; sourceTree = "<group>"; };
+		D2836ECC214B087800281B77 /* env.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = env.jpg; path = Resources/assets/env.jpg; sourceTree = SOURCE_ROOT; };
+		D2836ECD214B087800281B77 /* roughness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = roughness.png; path = Resources/assets/roughness.png; sourceTree = SOURCE_ROOT; };
+		D2836ECE214B087800281B77 /* albedo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = albedo.png; path = Resources/assets/albedo.png; sourceTree = SOURCE_ROOT; };
+		D2836ECF214B087800281B77 /* metal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metal.png; path = Resources/assets/metal.png; sourceTree = SOURCE_ROOT; };
+		D2836ED0214B087800281B77 /* normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = normal.png; path = Resources/assets/normal.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,9 @@
 		D2836EA2214AD2A700281B77 /* AR Sound Sculptures */ = {
 			isa = PBXGroup;
 			children = (
+				D2836EBB214AD6AA00281B77 /* extensions */,
+				D2836EB8214AD4AF00281B77 /* models */,
+				D2836EB7214AD4A600281B77 /* assets */,
 				D2836EA3214AD2A700281B77 /* AppDelegate.swift */,
 				D2836EA5214AD2A700281B77 /* art.scnassets */,
 				D2836EA7214AD2A700281B77 /* ViewController.swift */,
@@ -63,8 +84,38 @@
 				D2836EAC214AD2A900281B77 /* Assets.xcassets */,
 				D2836EAE214AD2A900281B77 /* LaunchScreen.storyboard */,
 				D2836EB1214AD2A900281B77 /* Info.plist */,
+				D2836EBE214AD71000281B77 /* ColladaNode.swift */,
 			);
 			path = "AR Sound Sculptures";
+			sourceTree = "<group>";
+		};
+		D2836EB7214AD4A600281B77 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				D2836ECE214B087800281B77 /* albedo.png */,
+				D2836ECC214B087800281B77 /* env.jpg */,
+				D2836ECF214B087800281B77 /* metal.png */,
+				D2836ED0214B087800281B77 /* normal.png */,
+				D2836ECD214B087800281B77 /* roughness.png */,
+				D2836EB9214AD4C100281B77 /* sickomode.mp3 */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		D2836EB8214AD4AF00281B77 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				D243AE92214B3BA500658605 /* goldHead_TS.scn */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		D2836EBB214AD6AA00281B77 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D2836EBC214AD6C500281B77 /* SCNNode.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,10 +176,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D243AE93214B3FCE00658605 /* goldHead_TS.scn in Resources */,
+				D2836ED2214B087800281B77 /* roughness.png in Resources */,
+				D2836ED5214B087800281B77 /* normal.png in Resources */,
 				D2836EA6214AD2A700281B77 /* art.scnassets in Resources */,
 				D2836EB0214AD2A900281B77 /* LaunchScreen.storyboard in Resources */,
+				D2836ED4214B087800281B77 /* metal.png in Resources */,
 				D2836EAD214AD2A900281B77 /* Assets.xcassets in Resources */,
+				D2836ED1214B087800281B77 /* env.jpg in Resources */,
 				D2836EAB214AD2A700281B77 /* Main.storyboard in Resources */,
+				D2836EBA214AD4C100281B77 /* sickomode.mp3 in Resources */,
+				D2836ED3214B087800281B77 /* albedo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +198,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2836EA8214AD2A700281B77 /* ViewController.swift in Sources */,
+				D2836EBD214AD6C500281B77 /* SCNNode.swift in Sources */,
+				D2836EBF214AD71000281B77 /* ColladaNode.swift in Sources */,
 				D2836EA4214AD2A700281B77 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
