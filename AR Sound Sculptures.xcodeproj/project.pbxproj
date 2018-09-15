@@ -22,6 +22,15 @@
 		D2836ED3214B087800281B77 /* albedo.png in Resources */ = {isa = PBXBuildFile; fileRef = D2836ECE214B087800281B77 /* albedo.png */; };
 		D2836ED4214B087800281B77 /* metal.png in Resources */ = {isa = PBXBuildFile; fileRef = D2836ECF214B087800281B77 /* metal.png */; };
 		D2836ED5214B087800281B77 /* normal.png in Resources */ = {isa = PBXBuildFile; fileRef = D2836ED0214B087800281B77 /* normal.png */; };
+		D28D7464214C378800F2E2B8 /* astroworld-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D28D7463214C378800F2E2B8 /* astroworld-logo.jpg */; };
+		D28D7466214C380100F2E2B8 /* Spotify_Logo_RGB_Green.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D7465214C380100F2E2B8 /* Spotify_Logo_RGB_Green.png */; };
+		D28D746A214C398900F2E2B8 /* travis-projection.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D28D7467214C398900F2E2B8 /* travis-projection.jpg */; };
+		D28D746B214C398900F2E2B8 /* travis-trippy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D28D7468214C398900F2E2B8 /* travis-trippy.jpg */; };
+		D28D746C214C398900F2E2B8 /* travis-park.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D28D7469214C398900F2E2B8 /* travis-park.jpg */; };
+		D28D746E214C3A8C00F2E2B8 /* Spotify_Logo_RGB_White.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D746D214C3A8C00F2E2B8 /* Spotify_Logo_RGB_White.png */; };
+		D28D7470214C5E3100F2E2B8 /* SCNAnchorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28D746F214C5E3100F2E2B8 /* SCNAnchorNode.swift */; };
+		D28D7475214C751700F2E2B8 /* smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D7473214C751700F2E2B8 /* smoke.png */; };
+		D28D7476214C751700F2E2B8 /* SmokeParticleSystem.scnp in Resources */ = {isa = PBXBuildFile; fileRef = D28D7474214C751700F2E2B8 /* SmokeParticleSystem.scnp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +51,15 @@
 		D2836ECE214B087800281B77 /* albedo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = albedo.png; path = Resources/assets/albedo.png; sourceTree = SOURCE_ROOT; };
 		D2836ECF214B087800281B77 /* metal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metal.png; path = Resources/assets/metal.png; sourceTree = SOURCE_ROOT; };
 		D2836ED0214B087800281B77 /* normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = normal.png; path = Resources/assets/normal.png; sourceTree = SOURCE_ROOT; };
+		D28D7463214C378800F2E2B8 /* astroworld-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "astroworld-logo.jpg"; path = "Resources/assets/astroworld-logo.jpg"; sourceTree = SOURCE_ROOT; };
+		D28D7465214C380100F2E2B8 /* Spotify_Logo_RGB_Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Spotify_Logo_RGB_Green.png; path = Resources/assets/Spotify_Logo_RGB_Green.png; sourceTree = SOURCE_ROOT; };
+		D28D7467214C398900F2E2B8 /* travis-projection.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "travis-projection.jpg"; path = "Resources/assets/travis-projection.jpg"; sourceTree = SOURCE_ROOT; };
+		D28D7468214C398900F2E2B8 /* travis-trippy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "travis-trippy.jpg"; path = "Resources/assets/travis-trippy.jpg"; sourceTree = SOURCE_ROOT; };
+		D28D7469214C398900F2E2B8 /* travis-park.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "travis-park.jpg"; path = "Resources/assets/travis-park.jpg"; sourceTree = SOURCE_ROOT; };
+		D28D746D214C3A8C00F2E2B8 /* Spotify_Logo_RGB_White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Spotify_Logo_RGB_White.png; path = Resources/assets/Spotify_Logo_RGB_White.png; sourceTree = SOURCE_ROOT; };
+		D28D746F214C5E3100F2E2B8 /* SCNAnchorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNAnchorNode.swift; sourceTree = "<group>"; };
+		D28D7473214C751700F2E2B8 /* smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smoke.png; sourceTree = "<group>"; };
+		D28D7474214C751700F2E2B8 /* SmokeParticleSystem.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = SmokeParticleSystem.scnp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +103,9 @@
 				D2836EAE214AD2A900281B77 /* LaunchScreen.storyboard */,
 				D2836EB1214AD2A900281B77 /* Info.plist */,
 				D2836EBE214AD71000281B77 /* ColladaNode.swift */,
+				D28D746F214C5E3100F2E2B8 /* SCNAnchorNode.swift */,
+				D28D7473214C751700F2E2B8 /* smoke.png */,
+				D28D7474214C751700F2E2B8 /* SmokeParticleSystem.scnp */,
 			);
 			path = "AR Sound Sculptures";
 			sourceTree = "<group>";
@@ -98,6 +119,12 @@
 				D2836ED0214B087800281B77 /* normal.png */,
 				D2836ECD214B087800281B77 /* roughness.png */,
 				D2836EB9214AD4C100281B77 /* sickomode.mp3 */,
+				D28D7463214C378800F2E2B8 /* astroworld-logo.jpg */,
+				D28D7465214C380100F2E2B8 /* Spotify_Logo_RGB_Green.png */,
+				D28D7469214C398900F2E2B8 /* travis-park.jpg */,
+				D28D7467214C398900F2E2B8 /* travis-projection.jpg */,
+				D28D7468214C398900F2E2B8 /* travis-trippy.jpg */,
+				D28D746D214C3A8C00F2E2B8 /* Spotify_Logo_RGB_White.png */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -176,7 +203,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28D746B214C398900F2E2B8 /* travis-trippy.jpg in Resources */,
+				D28D746E214C3A8C00F2E2B8 /* Spotify_Logo_RGB_White.png in Resources */,
 				D243AE93214B3FCE00658605 /* goldHead_TS.scn in Resources */,
+				D28D746C214C398900F2E2B8 /* travis-park.jpg in Resources */,
+				D28D746A214C398900F2E2B8 /* travis-projection.jpg in Resources */,
+				D28D7464214C378800F2E2B8 /* astroworld-logo.jpg in Resources */,
+				D28D7475214C751700F2E2B8 /* smoke.png in Resources */,
 				D2836ED2214B087800281B77 /* roughness.png in Resources */,
 				D2836ED5214B087800281B77 /* normal.png in Resources */,
 				D2836EA6214AD2A700281B77 /* art.scnassets in Resources */,
@@ -186,6 +219,8 @@
 				D2836ED1214B087800281B77 /* env.jpg in Resources */,
 				D2836EAB214AD2A700281B77 /* Main.storyboard in Resources */,
 				D2836EBA214AD4C100281B77 /* sickomode.mp3 in Resources */,
+				D28D7466214C380100F2E2B8 /* Spotify_Logo_RGB_Green.png in Resources */,
+				D28D7476214C751700F2E2B8 /* SmokeParticleSystem.scnp in Resources */,
 				D2836ED3214B087800281B77 /* albedo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28D7470214C5E3100F2E2B8 /* SCNAnchorNode.swift in Sources */,
 				D2836EA8214AD2A700281B77 /* ViewController.swift in Sources */,
 				D2836EBD214AD6C500281B77 /* SCNNode.swift in Sources */,
 				D2836EBF214AD71000281B77 /* ColladaNode.swift in Sources */,

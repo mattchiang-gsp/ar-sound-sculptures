@@ -1,27 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="AR_Sound_Sculptures" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0fc-Sn-oyH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="travis-park.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mJf-fi-Xgh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twE-M9-UdQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </arscnView>
+                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spotify_Logo_RGB_White.png" translatesAutoresizingMaskIntoConstraints="NO" id="CdR-fd-C3q">
+                                <rect key="frame" x="16" y="739" width="114" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="nsd-6n-gNN"/>
+                                    <constraint firstAttribute="height" constant="60" id="xwr-Dp-htj"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="twE-M9-UdQ" firstAttribute="height" secondItem="0fc-Sn-oyH" secondAttribute="height" id="2to-3e-EsJ"/>
+                            <constraint firstItem="twE-M9-UdQ" firstAttribute="centerY" secondItem="0fc-Sn-oyH" secondAttribute="centerY" id="92f-SN-UIc"/>
+                            <constraint firstItem="mJf-fi-Xgh" firstAttribute="width" secondItem="0fc-Sn-oyH" secondAttribute="width" id="N5d-gx-FZl"/>
+                            <constraint firstItem="mJf-fi-Xgh" firstAttribute="centerX" secondItem="0fc-Sn-oyH" secondAttribute="centerX" id="Ohb-98-4iY"/>
+                            <constraint firstAttribute="bottom" secondItem="CdR-fd-C3q" secondAttribute="bottom" constant="13" id="Vfz-vD-sb7"/>
+                            <constraint firstItem="twE-M9-UdQ" firstAttribute="centerX" secondItem="0fc-Sn-oyH" secondAttribute="centerX" id="eD7-Xb-uN2"/>
+                            <constraint firstItem="mJf-fi-Xgh" firstAttribute="centerY" secondItem="0fc-Sn-oyH" secondAttribute="centerY" id="eQ4-TN-0it"/>
+                            <constraint firstItem="twE-M9-UdQ" firstAttribute="width" secondItem="0fc-Sn-oyH" secondAttribute="width" id="mXK-0k-1zD"/>
+                            <constraint firstItem="mJf-fi-Xgh" firstAttribute="height" secondItem="0fc-Sn-oyH" secondAttribute="height" id="onX-44-KEC"/>
+                            <constraint firstItem="CdR-fd-C3q" firstAttribute="leading" secondItem="FDX-ad-qQ7" secondAttribute="leading" constant="16" id="wKj-cv-md8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FDX-ad-qQ7"/>
+                    </view>
                     <connections>
-                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="sceneView" destination="twE-M9-UdQ" id="Kxs-ad-UJp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="34.729064039408868"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Spotify_Logo_RGB_White.png" width="2362" height="708"/>
+        <image name="travis-park.jpg" width="920" height="920"/>
+    </resources>
 </document>
