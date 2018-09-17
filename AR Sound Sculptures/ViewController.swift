@@ -42,7 +42,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         addTapGestureToSceneView()
         
         // Instantiate the audio source
-        setUpAudio(fileName: "sickomode.mp3")
+        setUpAudio(fileName: "sickomode-short.mp3")
         
     }
     

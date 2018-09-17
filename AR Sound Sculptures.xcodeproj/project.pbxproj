@@ -31,6 +31,7 @@
 		D28D7470214C5E3100F2E2B8 /* SCNAnchorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28D746F214C5E3100F2E2B8 /* SCNAnchorNode.swift */; };
 		D28D7475214C751700F2E2B8 /* smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D7473214C751700F2E2B8 /* smoke.png */; };
 		D28D7476214C751700F2E2B8 /* SmokeParticleSystem.scnp in Resources */ = {isa = PBXBuildFile; fileRef = D28D7474214C751700F2E2B8 /* SmokeParticleSystem.scnp */; };
+		D28D747821501EEA00F2E2B8 /* sickomode-short.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D28D747721501EEA00F2E2B8 /* sickomode-short.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		D28D746F214C5E3100F2E2B8 /* SCNAnchorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNAnchorNode.swift; sourceTree = "<group>"; };
 		D28D7473214C751700F2E2B8 /* smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smoke.png; sourceTree = "<group>"; };
 		D28D7474214C751700F2E2B8 /* SmokeParticleSystem.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = SmokeParticleSystem.scnp; sourceTree = "<group>"; };
+		D28D747721501EEA00F2E2B8 /* sickomode-short.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "sickomode-short.mp3"; path = "Resources/sickomode-short.mp3"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				D2836ED0214B087800281B77 /* normal.png */,
 				D2836ECD214B087800281B77 /* roughness.png */,
 				D2836EB9214AD4C100281B77 /* sickomode.mp3 */,
+				D28D747721501EEA00F2E2B8 /* sickomode-short.mp3 */,
 				D28D7463214C378800F2E2B8 /* astroworld-logo.jpg */,
 				D28D7465214C380100F2E2B8 /* Spotify_Logo_RGB_Green.png */,
 				D28D7469214C398900F2E2B8 /* travis-park.jpg */,
@@ -215,6 +218,7 @@
 				D2836EA6214AD2A700281B77 /* art.scnassets in Resources */,
 				D2836EB0214AD2A900281B77 /* LaunchScreen.storyboard in Resources */,
 				D2836ED4214B087800281B77 /* metal.png in Resources */,
+				D28D747821501EEA00F2E2B8 /* sickomode-short.mp3 in Resources */,
 				D2836EAD214AD2A900281B77 /* Assets.xcassets in Resources */,
 				D2836ED1214B087800281B77 /* env.jpg in Resources */,
 				D2836EAB214AD2A700281B77 /* Main.storyboard in Resources */,
